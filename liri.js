@@ -12,7 +12,7 @@ const client = new Twitter(keys.twitter);
 
 // Variables
 const argsArray = process.argv.slice(2); // without the first two elements (paths)
-const OMDB_URL; //FIXME: add the qurey URL
+const OMDB_URL; //FIXME: add the query URL
 
 
 // run the appropriate function depends on the user input
