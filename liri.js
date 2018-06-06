@@ -34,7 +34,7 @@ switch (arg1) {
 
 // manipulate argArray
 for (let i = 2; i < process.argv; i++) {
-    argsArray.push(process.argv[i]);
+    argsArray[i - 2] = process.argv[i];
 }
 console.log(argsArray);
 
