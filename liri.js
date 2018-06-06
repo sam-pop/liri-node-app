@@ -1,4 +1,4 @@
-// Requires
+// Dependencies
 require("dotenv").config();
 const Spotify = require('node-spotify-api');
 const Twitter = require('twitter');
