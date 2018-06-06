@@ -3,6 +3,7 @@ require("dotenv").config();
 const Spotify = require('node-spotify-api');
 const Twitter = require('twitter');
 const request = require('request');
+const fs = require("fs");
 const keys = require("./keys.js");
 
 // Keys
@@ -11,6 +12,7 @@ const client = new Twitter(keys.twitter);
 
 // Variables
 const argsArray = process.argv.slice(2); // without the first two elements (paths)
+
 
 // run the appropriate function depends on the user input
 switch (argsArray[0]) {
