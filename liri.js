@@ -9,10 +9,11 @@ const keys = require("./keys.js");
 // Keys
 const spotify = new Spotify(keys.spotify);
 const client = new Twitter(keys.twitter);
+const OMDB_KEY = "trilogy";
 
 // Variables
 const argsArray = process.argv.slice(2); // without the first two elements (paths)
-const OMDB_URL; //FIXME: add the query URL
+const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&s="; //FIXME: add the query URL
 
 
 // run the appropriate function depends on the user input
@@ -24,7 +25,7 @@ switch (argsArray[0]) {
         spotifySong(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
         break;
     case 'movie-this':
-        omdbMovie(argsArray[1], OMDB_URL); //TODO: build this function FIXME: make sure this is the arg the function need
+        omdbMovie(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
         break;
     case 'do-what-it-says':
         runRandomTxt(); //TODO: build this function
@@ -40,7 +41,8 @@ function showMyTweets() {}
 function spotifySong(song) {}
 
 // show the movie info fetched from the OMDB API
-function omdbMovie(movie, url) {
+function omdbMovie(movie) {
+    let url = OMDB_URL + movie;
     request(url, (error, response, body) => {
 
     });
