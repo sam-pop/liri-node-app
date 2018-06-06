@@ -12,7 +12,7 @@ const client = new Twitter(keys.twitter);
 // Variables
 const arg1 = process.argv[2];
 const arg2 = process.argv[3];
-var argsArray = process.argv;
+var argsArray = [];
 
 // run the appropriate function depends on the user input
 switch (arg1) {
@@ -33,9 +33,10 @@ switch (arg1) {
 }
 
 // manipulate argArray
-for (let i of argsArray) {
-
+for (let i = 2; i < process.argv; i++) {
+    argsArray.push(process.argv[i]);
 }
+console.log(argsArray);
 
 // use the twitter API package to show my last 20 tweets and when they were created
 function showMyTweets() {}
