@@ -10,9 +10,7 @@ const spotify = new Spotify(keys.spotify);
 const client = new Twitter(keys.twitter);
 
 // Variables
-var argsArray = process.argv;
-// removes the first two elements (paths) from the args array
-argsArray.splice(0, 2);
+const argsArray = process.argv.slice(2); // removes the first two elements (paths) from the args array
 
 // run the appropriate function depends on the user input
 switch (argsArray[0]) {
