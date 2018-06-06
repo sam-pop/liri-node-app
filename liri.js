@@ -1,14 +1,17 @@
+// Requires
 require("dotenv").config();
+const Spotify = require('node-spotify-api');
+const Twitter = require('twitter');
+const request = require('request');
+const keys = require("./keys.js");
 
-var Spotify = require('node-spotify-api');
-var Twitter = require('twitter');
-var keys = require("./keys.js");
+// Keys
+const spotify = new Spotify(keys.spotify);
+const client = new Twitter(keys.twitter);
 
-var spotify = new Spotify(keys.spotify);
-var client = new Twitter(keys.twitter);
-
-var arg1 = process.argv[2];
-var arg2 = process.argv[3];
+// Variables
+const arg1 = process.argv[2];
+const arg2 = process.argv[3];
 var argsArray = process.argv;
 
 // run the appropriate function depends on the user input

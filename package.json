@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/sam-pop/liri-node-app#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "node-spotify-api": "^1.0.7",
+    "request": "^2.87.0",
     "twitter": "^1.7.1"
   }
 }
