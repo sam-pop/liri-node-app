@@ -12,6 +12,7 @@ const client = new Twitter(keys.twitter);
 
 // Variables
 const argsArray = process.argv.slice(2); // without the first two elements (paths)
+const OMDB_URL; //FIXME: add the qurey URL
 
 
 // run the appropriate function depends on the user input
@@ -23,7 +24,7 @@ switch (argsArray[0]) {
         spotifySong(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
         break;
     case 'movie-this':
-        omdbMovie(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
+        omdbMovie(argsArray[1], OMDB_URL); //TODO: build this function FIXME: make sure this is the arg the function need
         break;
     case 'do-what-it-says':
         runRandomTxt(); //TODO: build this function
@@ -39,7 +40,11 @@ function showMyTweets() {}
 function spotifySong(song) {}
 
 // show the movie info fetched from the OMDB API
-function omdbMovie(movie) {}
+function omdbMovie(movie, url) {
+    request(url, (error, response, body) => {
+
+    });
+}
 
 // run the command inside the random.txt file
 function runRandomTxt() {}
