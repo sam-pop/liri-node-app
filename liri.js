@@ -11,7 +11,7 @@ var arg1 = process.argv[2];
 var arg2 = process.argv[3];
 var argsArray = process.argv;
 
-
+// run the appropriate function depends on the user input
 switch (arg1) {
     case 'my-tweets':
         showMyTweets(); //TODO: build this function
