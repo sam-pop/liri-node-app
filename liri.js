@@ -32,6 +32,11 @@ switch (arg1) {
         break;
 }
 
+// manipulate argArray
+for (let i of argsArray) {
+
+}
+
 // use the twitter API package to show my last 20 tweets and when they were created
 function showMyTweets() {}
 
