@@ -41,5 +41,5 @@ function spotifySong(song) {}
 // show the movie info fetched from the OMDB API
 function omdbMovie(movie) {}
 
-//run the command inside the random.txt file
+// run the command inside the random.txt file
 function runRandomTxt() {}
