@@ -28,3 +28,15 @@ switch (arg1) {
     default:
         break;
 }
+
+// use the twitter API package to show my last 20 tweets and when they were created
+function showMyTweets() {}
+
+// This will show the following information about the song: artist(s), song's name, preview link, album
+function spotifySong(song) {}
+
+// show the movie info fetched from the omdb API
+function omdbMovie(movie) {}
+
+//run the command inside the random.txt file
+function runRandomTxt() {}
