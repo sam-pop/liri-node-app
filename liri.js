@@ -35,7 +35,22 @@ switch (argsArray[0]) {
 }
 
 // use the twitter API package to show my last 20 tweets and when they were created
-function showMyTweets() {}
+function showMyTweets() {
+    client.get(
+        '/statuses/home_timeline.json', {
+            count: 20
+        },
+        function (error, tweets) {
+            if (error) throw error;
+            if (tweets) {
+                for (let i of tweets) {
+                    console.log("Tweet: " + i.text);
+                }
+            }
+        }
+    );
+
+}
 
 // This will show the following information about the song: artist(s), song's name, preview link, album (default: "The Sign" by Ace of Base)
 function spotifySong(song) {}
