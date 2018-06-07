@@ -25,7 +25,7 @@ switch (argsArray[0]) {
         spotifySong(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
         break;
     case 'movie-this':
-        omdbMovie(argsArray[1]); //TODO: build this function FIXME: make sure this is the arg the function need
+        omdbMovie(argsArray[1]);
         break;
     case 'do-what-it-says':
         runRandomTxt(); //TODO: build this function
