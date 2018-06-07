@@ -94,8 +94,9 @@ function omdbMovie(movie) {
 // run the command inside the random.txt file
 function runRandomTxt() {}
 
-// print the item to the console/terminal 
-function print(title, item) {
+// print the item in the desired format to the console/terminal 
+// (we use the rest operator to make the second arg "optional" in the context of this function)
+function print(title, ...item) {
     console.log("* " + title + " " + item);
 }
 
