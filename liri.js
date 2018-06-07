@@ -13,7 +13,7 @@ const OMDB_KEY = "trilogy";
 
 // Variables
 const argsArray = process.argv.slice(2); // without the first two elements (paths)
-const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&s="; //FIXME: add the query URL
+const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t="; //FIXME: add the query URL
 
 
 // run the appropriate function depends on the user input
@@ -41,10 +41,27 @@ function showMyTweets() {}
 function spotifySong(song) {}
 
 // show the movie info fetched from the OMDB API
+/*
+  * Title of the movie.
+   * Year the movie came out.
+   * IMDB Rating of the movie.
+   * Rotten Tomatoes Rating of the movie.
+   * Country where the movie was produced.
+   * Language of the movie.
+   * Plot of the movie.
+   * Actors in the movie.
+
+*/
 function omdbMovie(movie) {
+    if (!movie) {
+        movie = 'Mr. Nobody';
+    }
     let url = OMDB_URL + movie;
     request(url, (error, response, body) => {
-
+        if (error) throw error;
+        if (!error && response.statusCode === 200) {
+            console.log("* " + body);
+        }
     });
 }
 
