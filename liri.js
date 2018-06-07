@@ -13,7 +13,7 @@ const OMDB_KEY = "trilogy";
 
 // Variables
 const argsArray = process.argv.slice(2); // removes the first two arguments (paths)
-const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t=";
+const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t="; //OMDB API url
 
 
 // run the appropriate function depends on the user input
