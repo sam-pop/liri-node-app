@@ -12,7 +12,7 @@ const client = new Twitter(keys.twitter);
 const OMDB_KEY = "trilogy";
 
 // Variables
-const argsArray = process.argv.slice(2); // without the first two elements (paths)
+const argsArray = process.argv.slice(2); // removes the first two arguments (paths)
 const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t=";
 
 
