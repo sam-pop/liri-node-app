@@ -23,7 +23,7 @@ var run = (arg, arg2) => {
             showMyTweets();
             break;
         case 'spotify-this-song':
-            spotifySong(arg2); //TODO: finish building this function
+            spotifySong(arg2);
             break;
         case 'movie-this':
             omdbMovie(arg2);
@@ -52,7 +52,7 @@ if (!argsArray[0]) {
             inquirer.prompt([{
                 type: "input",
                 name: "textArg",
-                message: "Anything in particular? (press Enter\Return to skip)"
+                message: "Anything in particular? (press Enter\\Return to skip)"
             }]).then(function (user2) {
                 run(user.action, user2.textArg);
             });
@@ -81,21 +81,23 @@ function showMyTweets() {
 }
 
 // This will show the following information about the song: artist(s), song's name, preview link, album (default: "The Sign" by Ace of Base)
-//TODO: fix to display all the info
 function spotifySong(song) {
     if (!song) {
-        song = 'The Sign'; // default song
+        song = 'ace of base the sign'; // default song
     }
     spotify.search({
         type: 'track',
-        query: song
-        //FIXME: ,limit: 2
+        query: song,
+        limit: 10
     }, function (err, data) {
         if (err) throw err;
-        //FIXME: console.log(data.tracks.items);
-        let results = data.tracks.items;
-        for (let item of results)
-            console.log(item.album);
+        let result = data.tracks.items;
+        print('Artist(s):', result[0].artists[0].name);
+        print('Song\'s Name:', result[0].name);
+        (result[0].preview_url) ? print('Preview link:', result[0].preview_url): print('Preview link:', 'preview not available');
+        print('Album:', result[0].album.name);
+        // for (let item of results)
+        //     console.log(item.album);
     });
 }
 
