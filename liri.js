@@ -83,15 +83,19 @@ function showMyTweets() {
 // This will show the following information about the song: artist(s), song's name, preview link, album (default: "The Sign" by Ace of Base)
 //TODO: fix to display all the info
 function spotifySong(song) {
+    if (!song) {
+        song = 'The Sign'; // default song
+    }
     spotify.search({
         type: 'track',
-        query: song,
-        limit: 2
+        query: song
+        //FIXME: ,limit: 2
     }, function (err, data) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log(data.tracks.items);
+        if (err) throw err;
+        //FIXME: console.log(data.tracks.items);
+        let results = data.tracks.items;
+        for (let item of results)
+            console.log(item.album);
     });
 }
 
