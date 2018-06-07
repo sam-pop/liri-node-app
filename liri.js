@@ -29,7 +29,7 @@ var run = (arg, arg2) => {
             omdbMovie(arg2);
             break;
         case 'do-what-it-says':
-            runRandomTxt(); //TODO: build this function
+            runRandomTxt();
             break;
     }
 };
@@ -96,9 +96,12 @@ function omdbMovie(movie) {
 
 // run the command inside the random.txt file
 function runRandomTxt() {
-    fs.readFile("./random.txt", "utf8", function (err, data) {
-        let txtArr = data.split(',');
-        run(txtArr[0], txtArr[1]);
+    fs.readFile("./random.txt", "utf8", function (error, data) {
+        if (error) throw error;
+        if (data) {
+            let dataArr = data.split(',');
+            run(dataArr[0], dataArr[1]);
+        }
     });
 }
 
