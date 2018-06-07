@@ -52,26 +52,12 @@ if (!argsArray[0]) {
             inquirer.prompt([{
                 type: "input",
                 name: "textArg",
-                message: "Anything in particular? (press Enter to skip)"
+                message: "Anything in particular? (press Enter\Return to skip)"
             }]).then(function (user2) {
                 run(user.action, user2.textArg);
             });
         }
     });
-    // inquirer.prompt([{
-    //         type: "list",
-    //         name: "action",
-    //         message: "Pick an action you would like to perform:",
-    //         choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
-    //     },
-    //     {
-    //         type: "input",
-    //         name: "textArg",
-    //         message: "Anything in particular? (press Enter to skip)"
-    //     },
-    // ]).then(function (user) {
-    //     run(user.action, user.textArg);
-    // });
 }
 
 
