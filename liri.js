@@ -70,10 +70,10 @@ function showMyTweets() {
         function (error, tweets) {
             if (error) throw error;
             if (tweets) {
+                print('* *');
                 for (let t of tweets) {
                     print("Tweet:", t.text + " (" + t.created_at + ")");
                 }
-                log(' ');
             }
         }
     );
@@ -91,11 +91,11 @@ function spotifySong(song) {
     }, function (err, data) {
         if (err) throw err;
         let result = data.tracks.items;
+        print('* *');
         print('Artist(s):', result[0].artists[0].name);
         print('Song\'s Name:', result[0].name);
         print('Preview link:', result[0].preview_url);
         print('Album:', result[0].album.name);
-        log(' ');
     });
 }
 
@@ -110,6 +110,7 @@ function omdbMovie(movie) {
         if (!error && response.statusCode === 200) {
             let thisMovie = JSON.parse(body);
             if (thisMovie.Response == 'True') {
+                print('* *');
                 print('Title:', thisMovie.Title);
                 print('Year:', thisMovie.Year);
                 print('IMDB Rating:', thisMovie.imdbRating);
@@ -118,7 +119,6 @@ function omdbMovie(movie) {
                 moreThanOne(thisMovie.Language) ? print('Languages:', thisMovie.Language) : print('Language:', thisMovie.Language);
                 print('Plot:', thisMovie.Plot);
                 print('Actors:', thisMovie.Actors);
-                log(' ');
             } else print('Movie not found!');
         }
     });
