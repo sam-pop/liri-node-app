@@ -4,6 +4,7 @@ const Spotify = require('node-spotify-api');
 const Twitter = require('twitter');
 const request = require('request');
 const fs = require("fs");
+const inquirer = require('inquirer');
 const keys = require("./keys.js");
 
 // Keys
@@ -14,7 +15,6 @@ const OMDB_KEY = "trilogy";
 // Variables
 const argsArray = process.argv.slice(2); // removes the first two arguments (paths)
 const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t="; //OMDB API url
-
 
 // run the appropriate function depends on the user input
 var run = (arg, arg2) => {
@@ -31,9 +31,29 @@ var run = (arg, arg2) => {
         case 'do-what-it-says':
             readRandomTxt();
             break;
+        default:
+            console.log("Unrecognized command");
     }
 };
 run(argsArray[0], argsArray[1]);
+
+// prompt for user interaction when no args are provided
+if (!argsArray[0]) {
+    inquirer.prompt([{
+            type: "list",
+            name: "action",
+            message: "Pick an action you would like to perform:",
+            choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
+        },
+        {
+            type: "input",
+            name: "textArg",
+            message: "Anything in particular? (press Enter to skip)"
+        },
+    ]).then(function (user) {
+        run(user.action, user.textArg);
+    });
+}
 
 
 // use the twitter API package to show my last 20 tweets and when they were created
