@@ -37,6 +37,8 @@ switch (argsArray[0]) {
 // use the twitter API package to show my last 20 tweets and when they were created
 function showMyTweets() {
     client.get(
+        // '/statuses/user_timeline.json', {
+        //         screen_name: 'POTUS',
         '/statuses/home_timeline.json', {
             count: 20
         },
@@ -49,7 +51,6 @@ function showMyTweets() {
             }
         }
     );
-
 }
 
 // This will show the following information about the song: artist(s), song's name, preview link, album (default: "The Sign" by Ace of Base)
