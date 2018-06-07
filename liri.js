@@ -57,10 +57,19 @@ function omdbMovie(movie) {
         movie = 'Mr. Nobody';
     }
     let url = OMDB_URL + movie;
+    console.log(url);
     request(url, (error, response, body) => {
         if (error) throw error;
         if (!error && response.statusCode === 200) {
-            console.log("* " + body);
+            let thisMovie = JSON.parse(body);
+            console.log("* " + thisMovie.Title);
+            console.log("* " + thisMovie.Year);
+            console.log("* " + thisMovie.imdbRating);
+            console.log("* " + thisMovie.Ratings[1].Value);
+            console.log("* " + thisMovie.Country);
+            console.log("* " + thisMovie.Language);
+            console.log("* " + thisMovie.Plot);
+            console.log("* " + thisMovie.Actors);
         }
     });
 }
