@@ -35,24 +35,43 @@ var run = (arg, arg2) => {
             console.log("Unrecognized command");
     }
 };
-run(argsArray[0], argsArray[1]);
+if (argsArray[0])
+    run(argsArray[0], argsArray[1]);
 
 // prompt for user interaction when no args are provided
 if (!argsArray[0]) {
     inquirer.prompt([{
-            type: "list",
-            name: "action",
-            message: "Pick an action you would like to perform:",
-            choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
-        },
-        {
-            type: "input",
-            name: "textArg",
-            message: "Anything in particular? (press Enter to skip)"
-        },
-    ]).then(function (user) {
-        run(user.action, user.textArg);
+        type: "list",
+        name: "action",
+        message: "Pick an action you would like to perform:",
+        choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
+    }]).then(function (user) {
+        if (user.action === 'my-tweets' || user.action === 'do-what-it-says') {
+            run(user.action);
+        } else {
+            inquirer.prompt([{
+                type: "input",
+                name: "textArg",
+                message: "Anything in particular? (press Enter to skip)"
+            }]).then(function (user2) {
+                run(user.action, user2.textArg);
+            });
+        }
     });
+    // inquirer.prompt([{
+    //         type: "list",
+    //         name: "action",
+    //         message: "Pick an action you would like to perform:",
+    //         choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
+    //     },
+    //     {
+    //         type: "input",
+    //         name: "textArg",
+    //         message: "Anything in particular? (press Enter to skip)"
+    //     },
+    // ]).then(function (user) {
+    //     run(user.action, user.textArg);
+    // });
 }
 
 
