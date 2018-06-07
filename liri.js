@@ -64,8 +64,6 @@ if (!argsArray[0]) {
 // use the twitter API package to show my last 20 tweets and when they were created
 function showMyTweets() {
     client.get(
-        // '/statuses/user_timeline.json', {
-        //         screen_name: 'POTUS',
         '/statuses/home_timeline.json', {
             count: 20
         },
@@ -75,6 +73,7 @@ function showMyTweets() {
                 for (let t of tweets) {
                     print("Tweet:", t.text + " (" + t.created_at + ")");
                 }
+                log(' ');
             }
         }
     );
@@ -96,6 +95,7 @@ function spotifySong(song) {
         print('Song\'s Name:', result[0].name);
         print('Preview link:', result[0].preview_url);
         print('Album:', result[0].album.name);
+        log(' ');
     });
 }
 
@@ -118,6 +118,7 @@ function omdbMovie(movie) {
                 moreThanOne(thisMovie.Language) ? print('Languages:', thisMovie.Language) : print('Language:', thisMovie.Language);
                 print('Plot:', thisMovie.Plot);
                 print('Actors:', thisMovie.Actors);
+                log(' ');
             } else print('Movie not found!');
         }
     });
@@ -137,6 +138,14 @@ function readRandomTxt() {
 // print the item in the desired format to the console/terminal 
 function print(title, ...item) { // we use the rest operator to make the second arg "optional" in the context of this function
     console.log("* " + title + " " + item);
+    log(title + " " + item);
+}
+
+// logs the entry to the log.txt file
+function log(entry) {
+    fs.appendFile("./log.txt", entry + '\r\n', (error) => {
+        if (error) throw error;
+    });
 }
 
 // checks if the string holds more than one entry (separated by comma)
