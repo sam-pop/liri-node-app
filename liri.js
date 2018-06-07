@@ -70,7 +70,7 @@ function spotifySong(song) {
 // show the movie info fetched from the OMDB API
 function omdbMovie(movie) {
     if (!movie) {
-        movie = 'Mr. Nobody';
+        movie = 'Mr. Nobody'; //default movie
     }
     let url = OMDB_URL + movie;
     request(url, (error, response, body) => {
