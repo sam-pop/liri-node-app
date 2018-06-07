@@ -137,5 +137,5 @@ function print(title, ...item) { // we use the rest operator to make the second 
 
 // checks if the string holds more than one entry (separated by comma)
 function moreThanOne(str) {
-    return (str.indexOf(',') === -1) ? false : true;
+    return ((str.indexOf(',') === -1) ? false : true);
 }
