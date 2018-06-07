@@ -41,17 +41,6 @@ function showMyTweets() {}
 function spotifySong(song) {}
 
 // show the movie info fetched from the OMDB API
-/*
-  * Title of the movie.
-   * Year the movie came out.
-   * IMDB Rating of the movie.
-   * Rotten Tomatoes Rating of the movie.
-   * Country where the movie was produced.
-   * Language of the movie.
-   * Plot of the movie.
-   * Actors in the movie.
-
-*/
 function omdbMovie(movie) {
     if (!movie) {
         movie = 'Mr. Nobody';
