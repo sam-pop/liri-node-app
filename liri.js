@@ -17,20 +17,24 @@ const OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY + "&plot=short&t="
 
 
 // run the appropriate function depends on the user input
-switch (argsArray[0]) {
-    case 'my-tweets':
-        showMyTweets();
-        break;
-    case 'spotify-this-song':
-        spotifySong(argsArray[1]); //TODO: finish building this function
-        break;
-    case 'movie-this':
-        omdbMovie(argsArray[1]);
-        break;
-    case 'do-what-it-says':
-        runRandomTxt(); //TODO: build this function
-        break;
-}
+var run = (arg, arg2) => {
+    switch (arg) {
+        case 'my-tweets':
+            showMyTweets();
+            break;
+        case 'spotify-this-song':
+            spotifySong(arg2); //TODO: finish building this function
+            break;
+        case 'movie-this':
+            omdbMovie(arg2);
+            break;
+        case 'do-what-it-says':
+            runRandomTxt(); //TODO: build this function
+            break;
+    }
+};
+run(argsArray[0], argsArray[1]);
+
 
 // use the twitter API package to show my last 20 tweets and when they were created
 function showMyTweets() {
@@ -56,7 +60,7 @@ function showMyTweets() {
 function spotifySong(song) {
     spotify.search({
         type: 'track',
-        query: 'All the Small Things',
+        query: song,
         limit: 2
     }, function (err, data) {
         if (err) {
@@ -91,7 +95,12 @@ function omdbMovie(movie) {
 }
 
 // run the command inside the random.txt file
-function runRandomTxt() {}
+function runRandomTxt() {
+    fs.readFile("./random.txt", "utf8", function (err, data) {
+        let txtArr = data.split(',');
+        run(txtArr[0], txtArr[1]);
+    });
+}
 
 
 /* HELPER METHODS */
