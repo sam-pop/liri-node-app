@@ -72,8 +72,8 @@ function showMyTweets() {
         function (error, tweets) {
             if (error) throw error;
             if (tweets) {
-                for (let i of tweets) {
-                    print("Tweet:", i.text + " (" + i.created_at + ")");
+                for (let t of tweets) {
+                    print("Tweet:", t.text + " (" + t.created_at + ")");
                 }
             }
         }
