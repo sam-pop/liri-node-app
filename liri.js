@@ -94,10 +94,8 @@ function spotifySong(song) {
         let result = data.tracks.items;
         print('Artist(s):', result[0].artists[0].name);
         print('Song\'s Name:', result[0].name);
-        (result[0].preview_url) ? print('Preview link:', result[0].preview_url): print('Preview link:', 'preview not available');
+        print('Preview link:', result[0].preview_url);
         print('Album:', result[0].album.name);
-        // for (let item of results)
-        //     console.log(item.album);
     });
 }
 
