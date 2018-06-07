@@ -77,14 +77,16 @@ function omdbMovie(movie) {
         if (error) throw error;
         if (!error && response.statusCode === 200) {
             let thisMovie = JSON.parse(body);
-            print('Title:', thisMovie.Title);
-            print('Year:', thisMovie.Year);
-            print('IMDB Rating:', thisMovie.imdbRating);
-            print('RT Rating:', thisMovie.Ratings[1].Value);
-            moreThanOne(thisMovie.Country) ? print('Countries:', thisMovie.Country) : print('Country:', thisMovie.Country);
-            moreThanOne(thisMovie.Language) ? print('Languages:', thisMovie.Language) : print('Language:', thisMovie.Language);
-            print('Plot:', thisMovie.Plot);
-            print('Actors:', thisMovie.Actors);
+            if (thisMovie.Response == 'True') {
+                print('Title:', thisMovie.Title);
+                print('Year:', thisMovie.Year);
+                print('IMDB Rating:', thisMovie.imdbRating);
+                print('RT Rating:', thisMovie.Ratings[1].Value);
+                moreThanOne(thisMovie.Country) ? print('Countries:', thisMovie.Country) : print('Country:', thisMovie.Country);
+                moreThanOne(thisMovie.Language) ? print('Languages:', thisMovie.Language) : print('Language:', thisMovie.Language);
+                print('Plot:', thisMovie.Plot);
+                print('Actors:', thisMovie.Actors);
+            } else print('Movie not found!');
         }
     });
 }
@@ -93,7 +95,7 @@ function omdbMovie(movie) {
 function runRandomTxt() {}
 
 // print the item to the console/terminal 
-function print(title, ...item) {
+function print(title, item) {
     console.log("* " + title + " " + item);
 }
 
