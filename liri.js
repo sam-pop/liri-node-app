@@ -87,9 +87,9 @@ function spotifySong(song) {
     spotify.search({
         type: 'track',
         query: song,
-        limit: 10
-    }, function (err, data) {
-        if (err) throw err;
+        limit: 2
+    }, function (error, data) {
+        if (error) throw error;
         let result = data.tracks.items;
         print('* *');
         print('Artist(s):', result[0].artists[0].name);
