@@ -12,6 +12,22 @@ The app will show the formatted results in the command line and log them to `log
 
 `node liri.js '<command>' '<parameter>'`
 
+You will also need to create a file named `.env` and add the following to it, replacing the values with your own API keys (without quotes):
+```
+# Spotify API keys
+
+SPOTIFY_ID=your-spotify-id
+SPOTIFY_SECRET=your-spotify-secret
+
+# Twitter API keys
+
+TWITTER_CONSUMER_KEY=your-twitter-consumer-key
+TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
+TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
+TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
+
+```
+
 ### Available Commands
 `node liri.js my-tweets` - This will show your last 20 tweets and when they were created.
 
@@ -36,4 +52,4 @@ Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
 
 ## What I Used
 This app was built using Node.JS and the following NPM packages:
-[node-spotify-api](https://www.npmjs.com/package/node-spotify-api), [twitter](https://www.npmjs.com/package/twitter), [inquirer](https://www.npmjs.com/package/inquirer), [request](https://www.npmjs.com/package/request).
+[dotenv](https://www.npmjs.com/package/dotenv), [node-spotify-api](https://www.npmjs.com/package/node-spotify-api), [twitter](https://www.npmjs.com/package/twitter), [inquirer](https://www.npmjs.com/package/inquirer), [request](https://www.npmjs.com/package/request).
