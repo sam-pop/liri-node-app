@@ -8,7 +8,7 @@ The app will show the formatted results in the command line and log them to `log
 ## How to use
 `node liri.js` (for a user selection menu)
 
-**OR** use `node liri.js '<command>' '<parameter>'`
+**OR USE**  `node liri.js '<command>' '<parameter>'`
 
 ### Available Commands
 `node liri.js my-tweets` This will show your last 20 tweets and when they were created.
