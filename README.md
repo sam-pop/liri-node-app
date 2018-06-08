@@ -15,12 +15,10 @@ The app will show the formatted results in the command line and log them to `log
 You will also need to create a file named `.env` and add the following to it, replacing the values with your own API keys:
 ```
 # Spotify API keys
-
 SPOTIFY_ID=your-spotify-id
 SPOTIFY_SECRET=your-spotify-secret
 
 # Twitter API keys
-
 TWITTER_CONSUMER_KEY=your-twitter-consumer-key
 TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
 TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
