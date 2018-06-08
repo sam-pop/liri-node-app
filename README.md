@@ -8,8 +8,8 @@ The app will show the formatted results in the command line and log them to `log
 ## How to use
 `node liri.js` (for a user selection menu)
 
-or
+or `node liri.js 'command' 'parameter'`
 
-`node liri.js 'command' 'parameter'`
-
-## Available Commands
+### Available Commands
+`node liri.js my-tweets` This will show your last 20 tweets and when they were created.
+`node liri.js spotify-this-song '<song name here>'` This will show you the requested song information from Spotify.
