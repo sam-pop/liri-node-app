@@ -5,7 +5,7 @@ LIRI (Language Interpretation and Recognition Interface) is a command line node 
 The app will show the formatted results in the command line and log them to `log.txt` file. 
 
 ## How to use
-`node liri.js` (for a user selection menu)
+`node liri.js` (for a text-based menu)
 
 **OR**
 
