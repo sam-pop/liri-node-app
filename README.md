@@ -20,14 +20,14 @@ The app will show the formatted results in the command line and log them to `log
 `node liri.js do-what-it-says` This will read and execute the command and parameters from the `random.txt` file.
 
 ### Example
-Running the command `node liri.js movie-this braveheart'` will return the following result:
+Running the command `node liri.js movie-this 'the lion king'` will return the following result:
 ```
-Title: Braveheart
-Year: 1995
-IMDB Rating: 8.4
-RT Rating: 77%
+Title: The Lion King
+Year: 1994
+IMDB Rating: 8.5
+RT Rating: 93%
 Country: USA
-Languages: English, French, Latin, Scottish Gaelic
-Plot: When his secret bride is executed for assaulting an English soldier who tried to rape her, Sir William Wallace begins a revolt against King Edward I of England.
-Actors: James Robinson, Sean Lawlor, Sandy Nelson, James Cosmo
+Languages: English, Swahili, Xhosa, Zulu
+Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
 ```
