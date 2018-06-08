@@ -12,7 +12,7 @@ The app will show the formatted results in the command line and log them to `log
 
 `node liri.js '<command>' '<parameter>'`
 
-You will also need to create a file named `.env` and add the following to it, replacing the values with your own API keys (without quotes):
+You will also need to create a file named `.env` and add the following to it, replacing the values with your own API keys:
 ```
 # Spotify API keys
 
