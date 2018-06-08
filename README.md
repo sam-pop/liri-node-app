@@ -33,3 +33,7 @@ Languages: English, Swahili, Xhosa, Zulu
 Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
 Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
 ```
+
+## What I Used
+This app was built using Node.JS and the following NPM packages:
+[node-spotify-api](https://www.npmjs.com/package/node-spotify-api), [twitter](https://www.npmjs.com/package/twitter), [inquirer](https://www.npmjs.com/package/inquirer), [request](https://www.npmjs.com/package/request).
