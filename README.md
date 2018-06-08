@@ -18,3 +18,16 @@ The app will show the formatted results in the command line and log them to `log
 `node liri.js movie-this '<movie name here>'` This will show you the requested movie information from OMDB.
 
 `node liri.js do-what-it-says` This will read and execute the command and parameters from the `random.txt` file.
+
+### Example
+Running the command `node liri.js movie-this braveheart'` will return the following result:
+```
+Title: Braveheart
+Year: 1995
+IMDB Rating: 8.4
+RT Rating: 77%
+Country: USA
+Languages: English, French, Latin, Scottish Gaelic
+Plot: When his secret bride is executed for assaulting an English soldier who tried to rape her, Sir William Wallace begins a revolt against King Edward I of England.
+Actors: James Robinson, Sean Lawlor, Sandy Nelson, James Cosmo
+```
